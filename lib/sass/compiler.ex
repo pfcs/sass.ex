@@ -21,21 +21,21 @@ defmodule Sass.Compiler do
     A noop that gets overwritten by the NIF compile
   """
   def compile(_,_) do
-    exit(:nif_library_not_loaded)
+    :erlang.nif_error(:not_loaded)
   end
 
  @doc """
     A noop that gets overwritten by the NIF compile_file
   """
   def compile_file(_,_) do
-    exit(:nif_library_not_loaded)
+    :erlang.nif_error(:not_loaded)
   end
 
  @doc """
     A noop that gets overwritten by the NIF compile_file
   """
   def version() do
-    exit(:nif_library_not_loaded)
+    :erlang.nif_error(:not_loaded)
   end
 
   @doc false
